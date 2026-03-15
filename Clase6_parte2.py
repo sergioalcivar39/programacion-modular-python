@@ -2,7 +2,7 @@
 # Problema 2: Gestión de Inventario en un Almacén
 # ======================================================
 
-# Inventario inicial
+# Inventario inicial comenzamos con unos datos fijos
 inventario = {
     "arroz": 50,
     "azucar": 30,
@@ -10,7 +10,7 @@ inventario = {
 }
 
 
-# Función para registrar entrada de productos
+# Función para registrar entrada de productos se modifican los valores de los productos del inventario
 def registrar_entrada(producto, cantidad):
     """
     Aumenta la cantidad de un producto en el inventario.
@@ -42,7 +42,8 @@ def calcular_nivel_optimo():
     """
     total = sum(inventario.values())
     cantidad_productos = len(inventario)
-
+    # redorderis el termino len sirve cuando usamos arreglos o similares, nos da el total de elementos dentro
+    # del arreglo por ejemplo [1,2,3] len 3
     nivel_optimo = total / cantidad_productos
 
     print("Nivel óptimo promedio de inventario:", nivel_optimo)
@@ -68,7 +69,7 @@ print("Sistema de Gestión de Inventario")
 # Registrar movimientos
 registrar_entrada("arroz", 20)
 registrar_salida("leche", 5)
-
+# En esta ultima parte llamo a mis funciones anteriormente creadas 
 # Calcular nivel óptimo
 calcular_nivel_optimo()
 

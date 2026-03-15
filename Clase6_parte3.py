@@ -5,7 +5,7 @@
 # Función para leer datos de sensores
 def leer_sensores():
     """
-    Simula la lectura de sensores de proximidad.
+    Simula la lectura de sensores de proximidad para esto tenemos que poner un valor y que asi lo recoja.
     """
     distancia = float(input("Ingrese distancia al obstáculo (metros): "))
     return distancia
@@ -22,7 +22,7 @@ def calcular_ruta():
 # Función para detectar y evitar obstáculos
 def detectar_obstaculo(distancia):
     """
-    Determina si hay un obstáculo peligroso.
+    Determina si hay un obstáculo peligroso mediante bucles if.
     """
     if distancia < 5:
         print("Obstáculo detectado. Cambiando ruta.")
@@ -35,7 +35,8 @@ def detectar_obstaculo(distancia):
 # Procedimiento para ajustar la velocidad
 def ajustar_velocidad(obstaculo):
     """
-    Ajusta la velocidad del vehículo según las condiciones.
+    Ajusta la velocidad del vehículo según las condiciones mediante blucles if
+    # no pone el igual igual  == porque el poner solo un booleano como esta escrito este significa que lo compara a true.
     """
     if obstaculo:
         print("Reduciendo velocidad por seguridad.")
@@ -46,6 +47,8 @@ def ajustar_velocidad(obstaculo):
 # ======================================================
 # Programa principal
 # ======================================================
+
+# Se llaman a las funciones anteriormente creadas 
 
 print("Sistema de Navegación de Vehículo Autónomo")
 

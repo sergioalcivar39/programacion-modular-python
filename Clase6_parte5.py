@@ -5,7 +5,7 @@
 # Función para leer datos de sensores de humedad del suelo
 def leer_humedad_suelo():
     """
-    Lee el nivel de humedad del suelo desde sensores.
+    Lee el nivel de humedad del suelo desde sensores nosotros ingresamos el dato.
     """
     humedad = float(input("Ingrese humedad del suelo (%): "))
     return humedad
@@ -23,7 +23,7 @@ def consultar_clima():
 # Procedimiento para calcular la cantidad óptima de riego
 def calcular_riego(humedad, clima):
     """
-    Determina si es necesario regar el cultivo.
+    Determina si es necesario regar el cultivo mediante un blucle if.
     """
     if humedad < 40 and clima == "no":
         agua = 10
@@ -48,6 +48,8 @@ def controlar_valvulas(cantidad_agua):
 # ======================================================
 # Programa principal
 # ======================================================
+
+# Se llaman a las funciones anteriormente establecidas
 
 print("Sistema de Riego Automatizado")
 
