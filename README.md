@@ -1,119 +1,166 @@
-# # 📊 Ingeniería con Arreglos Multidimensionales
+# ============================================
 
-## 📌 Descripción
+# README - RETO 3
 
-Este proyecto presenta la resolución de problemas reales de ingeniería utilizando **arreglos multidimensionales** en Python. Se abordan aplicaciones en análisis estructural, simulación de fluidos, procesamiento de imágenes, análisis de datos y transformaciones geométricas.
+# SISTEMA DE INVENTARIO OPTIMIZADO
 
-El objetivo es demostrar cómo el uso de estructuras de datos como matrices y volúmenes permite modelar y resolver problemas complejos de manera eficiente.
+# ============================================
 
----
-
-## 🧠 Problemas Desarrollados
-
-### 🔹 Problema 1: Análisis de Fuerzas en una Estructura
-
-Se modeló una estructura mediante una matriz 3x3 donde cada elemento representa una fuerza aplicada en un nodo.
-
-* Se calcularon las sumas por filas y columnas
-* Se evaluó el equilibrio estructural usando la condición ∑F = 0
-
-📌 Resultado: La estructura no se encuentra en equilibrio.
+Autor: Sergio Alcivar
+Asignatura: Estructuras de Datos
+Tema: Listas enlazadas, pilas y colas (Parte 4)
 
 ---
 
-### 🔹 Problema 2: Simulación de Fluido en 3D
+## INTRODUCCIÓN
 
-Se utilizó un arreglo tridimensional (3x3x3) para representar la presión de un fluido.
+En este proyecto se optimiza un sistema de gestión de inventario y pedidos mediante el uso de estructuras de datos avanzadas: lista enlazada, cola (queue) y pila (stack).
 
-* Se implementó una actualización basada en el promedio de vecinos
-* Se simuló la propagación de presión en el tiempo
-
-📌 Mejora aplicada: Se actualizaron todas las celdas internas para lograr una simulación más realista.
+El objetivo es mejorar la eficiencia en el manejo de productos, pedidos y control de acciones dentro del sistema.
 
 ---
 
-### 🔹 Problema 3: Análisis de Imágenes Médicas en 3D
+## PROBLEMA IDENTIFICADO
 
-Se representó un volumen tridimensional como una imagen médica.
+En los sistemas básicos de inventario, se presentan limitaciones como:
 
-* Se aplicó un filtro de promedio (3x3x3)
-* Se redujo el ruido en los datos
+* Manejo poco eficiente de productos dinámicos
+* Procesamiento desordenado de pedidos
+* Falta de historial o control de acciones
 
-📌 Resultado: Se logró suavizar la imagen manteniendo su estructura.
-
----
-
-### 🔹 Problema 4: Manejo de Datos de Sensores
-
-Se analizaron datos de temperatura en una matriz 5x5.
-
-* Se calcularon promedios por filas (tiempo) y columnas (sensores)
-* Se calcularon desviaciones estándar
-* Se generó una visualización de los datos
-
-📌 Resultado: Se identificaron patrones de comportamiento y variabilidad en los sensores.
+Para resolver estos problemas, se implementaron estructuras de datos que optimizan cada uno de estos aspectos.
 
 ---
 
-### 🔹 Problema 5: Transformación de Coordenadas
+## ESTRUCTURAS UTILIZADAS
 
-Se aplicó una transformación lineal a un conjunto de puntos en 2D.
+1. LISTA ENLAZADA (Inventario)
 
-* Se utilizó una matriz de rotación
-* Se transformaron los puntos mediante multiplicación matricial
-* Se visualizaron los resultados
+Se utiliza para almacenar los productos disponibles.
 
-📌 Resultado: Los puntos fueron rotados correctamente en el plano cartesiano.
+Características:
 
----
+* Estructura dinámica
+* No requiere tamaño fijo
+* Inserción eficiente
 
-## ⚙️ Tecnologías Utilizadas
-
-* Python 3.12
-* NumPy
-* Matplotlib
+Justificación:
+Permite agregar o modificar productos sin necesidad de reorganizar toda la estructura.
 
 ---
 
-## 🚀 Ejecución del Proyecto
+2. COLA (Pedidos)
 
-1. Instalar dependencias:
+Se utiliza para gestionar los pedidos de los clientes.
 
-```bash
-pip install numpy matplotlib
-```
+Características:
 
-2. Ejecutar los archivos:
+* Sigue el principio FIFO (First In, First Out)
+* Los pedidos se atienden en orden de llegada
 
-```bash
-python problema1_fuerzas.py
-python problema2_fluido3d.py
-python problema3_imagen3d.py
-python problema4_sensores.py
-python problema5_transformaciones.py
-```
+Justificación:
+Garantiza equidad en la atención de pedidos, simulando sistemas reales.
 
 ---
 
-## ⚡ Eficiencia de la Solución
+3. PILA (Historial)
 
-El uso de arreglos multidimensionales permite:
+Se utiliza para registrar acciones realizadas en el sistema.
 
-* Reducir el uso de estructuras complejas
-* Optimizar operaciones mediante cálculos vectorizados
-* Mejorar el rendimiento en procesamiento de datos
-* Facilitar la simulación de sistemas físicos
+Características:
 
-Esto es fundamental en áreas como ingeniería, inteligencia artificial y simulación científica.
+* Sigue el principio LIFO (Last In, First Out)
+* Permite deshacer acciones recientes
 
----
-
-## 📌 Conclusión
-
-Los arreglos multidimensionales son herramientas clave para modelar sistemas reales. Su implementación en este proyecto permitió resolver problemas de distintas áreas de la ingeniería de forma eficiente, clara y escalable.
+Justificación:
+Facilita el control del sistema y la reversión de operaciones.
 
 ---
 
-## 👨‍💻 Autor
+## FUNCIONALIDADES IMPLEMENTADAS
 
-Proyecto desarrollado como práctica académica de programación aplicada a la ingeniería.
+* Agregar productos al inventario
+* Mostrar inventario actual
+* Registrar pedidos de clientes
+* Procesar pedidos en orden de llegada
+* Reducir stock automáticamente
+* Guardar historial de acciones
+* Deshacer última acción realizada
+
+---
+
+## EJECUCIÓN DEL PROGRAMA
+
+Para ejecutar el sistema, usar el siguiente comando:
+
+python sistema.py
+
+(Asegúrese de tener Python instalado)
+
+---
+
+## EJEMPLO DE EJECUCIÓN
+
+Producto agregado: Laptop (10)
+Producto agregado: Mouse (20)
+
+Pedido agregado: Juan pidió Laptop
+Pedido agregado: Ana pidió Mouse
+
+Pedido procesado: Juan
+Pedido procesado: Ana
+
+Inventario:
+Mouse: 15
+Laptop: 8
+
+Deshaciendo: Pedido Ana
+
+---
+
+## ANÁLISIS DE COMPLEJIDAD
+
+Lista enlazada:
+
+* Inserción: O(1)
+* Búsqueda: O(n)
+
+Cola:
+
+* Enqueue: O(1)
+* Dequeue: O(n) (por uso de lista)
+
+Pila:
+
+* Push: O(1)
+* Pop: O(1)
+
+---
+
+## VENTAJAS DEL SISTEMA
+
+✔️ Manejo eficiente de datos dinámicos
+✔️ Procesamiento ordenado de pedidos
+✔️ Control de acciones mediante historial
+✔️ Código modular y organizado
+
+---
+
+## POSIBLES MEJORAS
+
+* Implementar interfaz gráfica
+* Usar estructuras más eficientes (deque, heap)
+* Validaciones adicionales (stock negativo, entradas inválidas)
+* Persistencia de datos (archivos o base de datos)
+
+---
+
+## CONCLUSIÓN
+
+La integración de estructuras de datos avanzadas permite optimizar significativamente el sistema de inventario, mejorando su eficiencia, organización y funcionalidad.
+
+Este enfoque refleja cómo estructuras como listas enlazadas, colas y pilas son fundamentales en el desarrollo de sistemas reales.
+
+---
+
+## FIN DEL DOCUMENTO
